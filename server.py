@@ -27,6 +27,8 @@ def increment_count():
 @app.route('/custom_increment', methods=['post'])
 def cusomt_increment():
     session['counter'] += int(request.form['count_plus'])-1
+    # if 'count_plus' not in request.form:
+    #    session['count_plus'] += -1
     return redirect('/')
 
 @app.route('/destroy_session')
